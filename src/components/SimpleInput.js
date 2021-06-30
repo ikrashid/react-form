@@ -3,6 +3,7 @@ import useInput from '../hooks/use-input';
 const SimpleInput = (props) => {
   const {enteredValue: enteredName, 
     hasError: nameInputHasError,
+    valueIsValid: nameInputIsValid,
     valueChangedHandler: nameChangedHandler, 
     inputBlurHandler: nameInputBlurHandler,
     reset: resetNameInput
@@ -10,6 +11,7 @@ const SimpleInput = (props) => {
 
   const {enteredValue: enteredEmail,
     hasError: emailInputHasError,
+    valueIsValid: emailInputIsValid,
     valueChangedHandler: emailChangedHandler,
     inputBlurHandler: emailInputBlurHandler,
     reset: resetEmailInput
@@ -17,7 +19,7 @@ const SimpleInput = (props) => {
     
   let formIsValid = false;
 
-  if(!nameInputHasError && !emailInputHasError){
+  if(nameInputIsValid && emailInputIsValid){
     formIsValid = true;
   }
 
